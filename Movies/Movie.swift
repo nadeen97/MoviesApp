@@ -9,15 +9,16 @@
 import UIKit
 
 class Movie {
-    var mId :String
-    var mTitle :String
-    var mPosterPath : String
-    var mOverView : String
-    var mReleaseDate : String
-    var mVoteAvg : String
-    var mPopularity : String
-    var mFavorite : Bool
+    var mId = ""
+    var mTitle = ""
+    var mPosterPath = ""
+    var mOverView = ""
+    var mReleaseDate = ""
+    var mVoteAvg = ""
+    var mPopularity = ""
+    var mFavorite = false
     var mTrailerKey = [String]()
+    
     init(mvId:String,mvTitle :String,mvPostePath: String,mvOverView :String,mvReleasDate :String,mvVoteAvg :String,mvPopularity :String) {
         mId = mvId
         mTitle = mvTitle
@@ -43,4 +44,13 @@ class Movie {
   
 
 }
+    init(mvId:String,mvPostePath: String)
+    {
+        mId = mvId
+        mPosterPath = mvPostePath
+    }
+//    init(mvId:String,mvFavorite : Bool) {
+//        mId = mvId
+//        mFavorite = mvFavorite
+//    }
 }
