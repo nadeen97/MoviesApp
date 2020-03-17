@@ -8,12 +8,10 @@
 
 import UIKit
 
-class MyFavorits{
-    var myFavoriteMovies = [Movie]()
-    init()
-    {
-    }
+protocol MyFavorits {
+   
     
+    func favMovies(favMov : Movie)
     
 
 }

@@ -11,9 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 class MoiveDetails: UIViewController {
+     var delegate: MyFavorits?
     @IBOutlet weak var favBtn: UIButton!
     var movieKeys = [String]()
-    var myFavMov = MyFavorits()
     var flagSlected = false
     @IBAction func goToReviews(_ sender: Any) {
         
@@ -24,25 +24,21 @@ class MoiveDetails: UIViewController {
     }
     @IBOutlet weak var movieTrailers: UITableView!
     @IBAction func favoriteMovie(_ sender: UIButton) {
-//        favBtn.backgroundColor = UIColor.init(red: 31/255, green: 33/255, blue:36/255 , alpha: 1.0)
+
         if flagSlected ==  false{
             if #available(iOS 13.0, *) {
                 favBtn.setImage( UIImage.init(named: "starFill"), for: .normal)
+                delegate = self as? MyFavorits
+                delegate?.favMovies(favMov: self.movieShow)
+                
             } else {
-                // Fallback on earlier versions
             }
-            myFavMov.myFavoriteMovies.append(movieShow)
         flagSlected = true
         }else {
             if #available(iOS 13.0, *) {
                          favBtn.setImage( UIImage.init(named: "star"), for: .normal)
                      } else {
-                         // Fallback on earlier versions
                      }
-            if myFavMov.myFavoriteMovies.contains(where:{$0.mId == movieShow.mId}){
-                myFavMov.myFavoriteMovies.removeLast()
-
-            }
                  flagSlected = false
         }
         

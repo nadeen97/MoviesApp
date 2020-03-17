@@ -10,10 +10,15 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class MoviesFavorits: UICollectionViewController {
+class MoviesFavorits: UICollectionViewController,MyFavorits {
+    func favMovies(favMov: Movie) {
+        myFavoriteMovies.append(favMov)
+        self.collectionView.reloadData()
+        
+    }
+    
+var myFavoriteMovies = [Movie]()
 
-
-    var favMovies = MyFavorits()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,8 +55,8 @@ class MoviesFavorits: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         print("The val is " )
-            print(favMovies.myFavoriteMovies.count)
-        return favMovies.myFavoriteMovies.count
+//            print(favMovies.myFavoriteMovies.count)
+        return myFavoriteMovies.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,7 +64,7 @@ class MoviesFavorits: UICollectionViewController {
     
         // Configure the cell
 //          cell.fav.sd_setImage(with: URL(string: myMovies[indexPath.row].mPosterPath), placeholderImage: UIImage(named: "placeholder.png"))
-        cell.favMovPoster.sd_setImage(with: URL(string: favMovies.myFavoriteMovies[indexPath.row].mPosterPath), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.favMovPoster.sd_setImage(with: URL(string: myFavoriteMovies[indexPath.row].mPosterPath), placeholderImage: UIImage(named: "placeholder.png"))
         
         
         return cell
