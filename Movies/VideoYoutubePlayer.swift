@@ -17,6 +17,8 @@ class VideoYoutubePlayer: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(red: 31/255, green: 33/255, blue:36/255 , alpha: 1.0)
+//        self.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+
         
 //        youtubePlayer.loadWithVideoId("6JnN1DmbqoU")
         youtubePlayer.load(withVideoId: movieTraile)

@@ -16,6 +16,8 @@ class MovieReviews: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = UITableView.automaticDimension
+        self.tableView.rowHeight = 250
         self.navigationItem.title = "Movie Reviews"
         self.tableView.backgroundColor = UIColor.init(red: 31/255, green: 33/255, blue:36/255 , alpha: 1.0)
 fetchReviews()
@@ -25,7 +27,21 @@ fetchReviews()
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+func showAlert()
+{
+    let alertController = UIAlertController(title: "Reviews", message: "There are no Reviews For This Movie", preferredStyle: .alert)
+            
+    let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+//        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
 
+        self.dismiss(animated: true, completion: nil)
+    }
+    alertController.addAction(action1)
+    self.present(alertController, animated: true, completion: nil)
+
+
+    }
         
             func fetchReviews() {
        Alamofire.request("http://api.themoviedb.org/3/movie/\(movieId)/reviews?api_key=4b31f0efe12a16c14046bd6788aa555b", method: .get).responseJSON {
@@ -38,6 +54,10 @@ fetchReviews()
                         let myresult = try? JSON(data: myresponse.data!)
     //                    print(myresult!["results"])
                         let resultArray = myresult!["results"]
+                        if(resultArray.count<=0)
+                        {
+                            self.showAlert();
+                        }
                         for i in resultArray.arrayValue
                         {
                             var revAuth = i["author"].stringValue
@@ -84,13 +104,14 @@ fetchReviews()
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReviewCellTableViewCell
 
         // Configure the cell...
-        cell.detailTextLabel?.text = reviewContent[indexPath.row]
-        cell.textLabel?.text = reviewAuthor[indexPath.row]
-
-        return cell
+//        cell.detailTextLabel?.text =
+        cell.contentText.text = reviewAuthor[indexPath.row]
+        cell.authorText.text = reviewContent[indexPath.row]
+        cell.authorText.sizeToFit()
+            return cell
     }
     
 

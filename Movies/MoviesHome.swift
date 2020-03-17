@@ -50,7 +50,7 @@ class MoviesHome: UICollectionViewController {
     
     
         func fetchFilms() {
-   Alamofire.request("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.%20desc&api_key=4b31f0efe12a16c14046bd6788aa555b", method: .get).responseJSON {
+   Alamofire.request("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.%20desc&api_key=4b31f0efe12a16c14046bd6788aa555b", method: .get).responseJSON {
                 (myresponse) in
                 switch myresponse.result
                 {
@@ -63,7 +63,7 @@ class MoviesHome: UICollectionViewController {
                     for i in resultArray.arrayValue
                     {
 //                        let posPath = i["poster_path"].stringValue
-                        let posPath = "https://image.tmdb.org/t/p/w342/" + i["poster_path"].stringValue
+                        let posPath = "https://image.tmdb.org/t/p/w185/" + i["poster_path"].stringValue
                         let movId = i["id"].stringValue
                         let movPopular = i["popularity"].stringValue
                         let movTitle = i["title"].stringValue

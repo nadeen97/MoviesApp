@@ -12,6 +12,7 @@
 		405C81F6241C0526001B4EC1 /* MoviesFavorits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405C81F5241C0526001B4EC1 /* MoviesFavorits.swift */; };
 		40754FB7241B8F2000238FCA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40754FB6241B8F2000238FCA /* CollectionViewCell.swift */; };
 		40754FD7241BC18500238FCA /* MoiveDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40754FD6241BC18500238FCA /* MoiveDetails.swift */; };
+		407B5DCF2421292E00E9BC1A /* ReviewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407B5DCE2421292E00E9BC1A /* ReviewCellTableViewCell.swift */; };
 		407F551C241C27FE008E075D /* FavorietMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F551B241C27FE008E075D /* FavorietMovieCell.swift */; };
 		408008F6241BF5240020BAE2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408008F5241BF5240020BAE2 /* Movie.swift */; };
 		408FCC96241FB53A00C47DB8 /* VideoYoutubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FCC95241FB53A00C47DB8 /* VideoYoutubePlayer.swift */; };
@@ -34,6 +35,7 @@
 		405C81F5241C0526001B4EC1 /* MoviesFavorits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesFavorits.swift; sourceTree = "<group>"; };
 		40754FB6241B8F2000238FCA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		40754FD6241BC18500238FCA /* MoiveDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoiveDetails.swift; sourceTree = "<group>"; };
+		407B5DCE2421292E00E9BC1A /* ReviewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCellTableViewCell.swift; sourceTree = "<group>"; };
 		407F551B241C27FE008E075D /* FavorietMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorietMovieCell.swift; sourceTree = "<group>"; };
 		408008F5241BF5240020BAE2 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		408FCC95241FB53A00C47DB8 /* VideoYoutubePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoYoutubePlayer.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				408FCC95241FB53A00C47DB8 /* VideoYoutubePlayer.swift */,
 				40FA59B8241FF46000B3FA34 /* MovieReviews.swift */,
 				40FA59BC24200C6100B3FA34 /* DataBaseHelper.swift */,
+				407B5DCE2421292E00E9BC1A /* ReviewCellTableViewCell.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				40FA59B9241FF46000B3FA34 /* MovieReviews.swift in Sources */,
 				40FA59BD24200C6100B3FA34 /* DataBaseHelper.swift in Sources */,
 				40E33772241A3EE700B8AD70 /* MoviesHome.swift in Sources */,
+				407B5DCF2421292E00E9BC1A /* ReviewCellTableViewCell.swift in Sources */,
 				40E33762241A30B600B8AD70 /* ViewController.swift in Sources */,
 				407F551C241C27FE008E075D /* FavorietMovieCell.swift in Sources */,
 				408008F6241BF5240020BAE2 /* Movie.swift in Sources */,
