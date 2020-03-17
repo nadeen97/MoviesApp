@@ -28,8 +28,10 @@ class MoiveDetails: UIViewController {
         if flagSlected ==  false{
             if #available(iOS 13.0, *) {
                 favBtn.setImage( UIImage.init(named: "starFill"), for: .normal)
-                delegate = self as? MyFavorits
+              
+//                delegate = self as? MyFavorits
                 delegate?.favMovies(favMov: self.movieShow)
+
                 
             } else {
             }
@@ -100,7 +102,9 @@ class MoiveDetails: UIViewController {
             movieShow.mTrailerKey.append(k)
 
         }
-
+        let oth = MoviesFavorits()
+                self.delegate = oth
+                      
     }
     
 

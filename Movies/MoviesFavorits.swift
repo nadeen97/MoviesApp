@@ -13,7 +13,11 @@ private let reuseIdentifier = "Cell"
 class MoviesFavorits: UICollectionViewController,MyFavorits {
     func favMovies(favMov: Movie) {
         myFavoriteMovies.append(favMov)
-        self.collectionView.reloadData()
+//        let layout = UICollectionViewFlowLayout()
+//               self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+//               layout.scrollDirection = .vertical
+//               view.addSubview(collectionView)
+//        self.collectionView.reloadData()
         
     }
     
@@ -24,9 +28,9 @@ var myFavoriteMovies = [Movie]()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+       
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         self.collectionView.backgroundColor = UIColor.init(red: 31/255, green: 33/255, blue:36/255 , alpha: 1.0)
         self.navigationItem.title = "Favorite Movies"

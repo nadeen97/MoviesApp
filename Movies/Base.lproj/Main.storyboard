@@ -47,6 +47,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="kXl-v6-T27"/>
+                    <connections>
+                        <outlet property="collectionView" destination="mmt-m7-NBe" id="XU3-2t-bwm"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hcf-q0-2lF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
